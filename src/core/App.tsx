@@ -1,9 +1,12 @@
 import React from "react";
+import Navigation from "../features/Navigation";
+import Main from "../common/main";
 
 const App = () => (
-  <div className="App">
-    <h1>Movies Browser</h1>
-  </div>
+  <>
+    <Navigation />
+    <Main></Main>
+  </>
 );
 
 export default App;

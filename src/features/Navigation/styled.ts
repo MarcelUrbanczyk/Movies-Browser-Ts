@@ -6,6 +6,7 @@ export const StyledNavigation = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 40px;
 `;
 
 export const Logo = styled.div`
@@ -45,7 +46,6 @@ export const NavLink = styled.li`
   padding: 8px 24px;
   align-items: center;
   border-radius: 24px;
-  border: 1px solid #fff;
   color: #fff;
   list-style: none;
   display: flex;
@@ -53,6 +53,10 @@ export const NavLink = styled.li`
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
+  &:hover,
+  &:active {
+    border: 1px solid #fff;
+  }
 `;
 
 export const SearchBar = styled.div`
@@ -62,8 +66,10 @@ export const SearchBar = styled.div`
   border: 1px solid #e4e6f0;
   background: #fff;
   padding: 12px 24px;
-  align-self: flex-end;
   margin-left: auto;
+  display: flex;
+  gap: 16px;
+  align-content: center;
 `;
 
 export const Input = styled.input`
@@ -73,4 +79,5 @@ export const Input = styled.input`
   color: #7e839a;
   font-size: 16px;
   line-height: 150%;
+  outline: none;
 `;

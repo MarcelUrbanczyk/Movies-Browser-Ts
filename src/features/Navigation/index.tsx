@@ -11,6 +11,7 @@ import {
   Input,
 } from "./styled";
 import Icon from "./icon";
+import Loupe from "./loupe";
 
 const Navigation = () => (
   <StyledNavigation>
@@ -26,6 +27,7 @@ const Navigation = () => (
         <NavLink>People</NavLink>
       </NavLinks>
       <SearchBar>
+        <Loupe />
         <Input placeholder="Search for movies..." />
       </SearchBar>
     </Wrapper>

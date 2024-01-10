@@ -9,6 +9,7 @@ import {
   StyledNavigation,
   Wrapper,
   Input,
+  LoupeWrapper,
 } from "./styled";
 import Icon from "./icon";
 import Loupe from "./loupe";
@@ -27,7 +28,9 @@ const Navigation = () => (
         <NavLink>People</NavLink>
       </NavLinks>
       <SearchBar>
-        <Loupe />
+        <LoupeWrapper>
+          <Loupe />
+        </LoupeWrapper>
         <Input placeholder="Search for movies..." />
       </SearchBar>
     </Wrapper>

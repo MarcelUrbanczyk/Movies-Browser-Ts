@@ -5,8 +5,10 @@ import {
   Name,
   NavLink,
   NavLinks,
+  SearchBar,
   StyledNavigation,
   Wrapper,
+  Input,
 } from "./styled";
 import Icon from "./icon";
 
@@ -23,6 +25,9 @@ const Navigation = () => (
         <NavLink>Movies</NavLink>
         <NavLink>People</NavLink>
       </NavLinks>
+      <SearchBar>
+        <Input placeholder="Search for movies..." />
+      </SearchBar>
     </Wrapper>
   </StyledNavigation>
 );

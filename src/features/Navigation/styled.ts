@@ -54,3 +54,23 @@ export const NavLink = styled.li`
   text-transform: uppercase;
   cursor: pointer;
 `;
+
+export const SearchBar = styled.div`
+  width: 432px;
+  height: 48px;
+  border-radius: 33px;
+  border: 1px solid #e4e6f0;
+  background: #fff;
+  padding: 12px 24px;
+  align-self: flex-end;
+  margin-left: auto;
+`;
+
+export const Input = styled.input`
+  border: none;
+  width: 100%;
+  height: 100%;
+  color: #7e839a;
+  font-size: 16px;
+  line-height: 150%;
+`;

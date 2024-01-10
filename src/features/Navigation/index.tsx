@@ -25,6 +25,7 @@ const Navigation = () => (
       </Logo>
       <NavLinks>
         <NavLink>Movies</NavLink>
+        <NavLink>Shows</NavLink>
         <NavLink>People</NavLink>
       </NavLinks>
       <SearchBar>

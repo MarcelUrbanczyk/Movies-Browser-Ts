@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const StyledNavigation = styled.nav`
-  background-color: #18181b;
+  background-color: ${({ theme }) => theme.navigation.background};
   height: 94px;
   display: flex;
   justify-content: center;
@@ -31,7 +31,7 @@ export const Name = styled.h1`
   font-weight: 500;
   line-height: 40px;
   letter-spacing: -1.5px;
-  color: #fff;
+  color: ${({ theme }) => theme.navigation.logo};
   @media (max-width: 655px) {
     font-size: 16px;
   }
@@ -151,7 +151,7 @@ export const Input = styled.input`
   border: none;
   width: 100%;
   height: 100%;
-  color: #7e839a;
+  color: ${({ theme }) => theme.navigation.text};
   font-size: 16px;
   line-height: 150%;
   outline: none;

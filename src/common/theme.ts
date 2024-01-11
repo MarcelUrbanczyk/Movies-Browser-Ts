@@ -20,5 +20,6 @@ export const theme = {
   navigation: {
     background: colors.Woodsmoke,
     text: colors.Waterloo,
+    logo: colors.White,
   },
 };

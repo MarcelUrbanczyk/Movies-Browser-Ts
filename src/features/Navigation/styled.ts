@@ -10,7 +10,7 @@ export const StyledNavigation = styled.nav`
   @media (max-width: 1220px) {
     height: 160px;
   }
-  @media (max-width: 650px) {
+  @media (max-width: 655px) {
     height: 130px;
   }
   @media (max-width: 460px) {
@@ -32,7 +32,7 @@ export const Name = styled.h1`
   line-height: 40px;
   letter-spacing: -1.5px;
   color: #fff;
-  @media (max-width: 650px) {
+  @media (max-width: 655px) {
     font-size: 16px;
   }
   @media (max-width: 460px) {
@@ -50,7 +50,7 @@ export const Wrapper = styled.div`
     flex-wrap: wrap;
     gap: 24px;
 
-    @media (max-width: 650px) {
+    @media (max-width: 655px) {
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 18px;
@@ -65,7 +65,7 @@ export const Wrapper = styled.div`
 export const IconWrapper = styled.span`
   width: 40px;
   height: 40px;
-  @media (max-width: 650px) {
+  @media (max-width: 655px) {
     height: 35px;
     width: 35px;
   }
@@ -79,7 +79,7 @@ export const LoupeWrapper = styled.span`
   width: 24px;
   height: 24px;
   margin: auto;
-  @media (max-width: 650px) {
+  @media (max-width: 655px) {
     height: 20px;
     width: 20px;
   }
@@ -107,7 +107,7 @@ export const NavLink = styled.li`
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
-  @media (max-width: 650px) {
+  @media (max-width: 655px) {
     height: 34px;
     font-size: 14px;
     padding: 8px 12px;
@@ -135,7 +135,7 @@ export const SearchBar = styled.div`
   @media (max-width: 1220px) {
     flex-basis: 100%;
   }
-  @media (max-width: 650px) {
+  @media (max-width: 655px) {
     height: 44px;
     padding: 8px 12px;
     align-items: normal;

@@ -5,7 +5,7 @@ const colors = {
   Whisper: "#F5F5FA",
 };
 
-const theme = {
+export const theme = {
   background: colors.Whisper,
   box: colors.White,
   textPrimary: colors.Woodsmoke,

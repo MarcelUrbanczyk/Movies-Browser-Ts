@@ -22,4 +22,6 @@ export const theme = {
     text: colors.Waterloo,
     logo: colors.White,
   },
+  borderRadius: "5px",
+  shadow: "0px 4px 12px 0px rgba(186, 199, 213, 0.50)",
 };

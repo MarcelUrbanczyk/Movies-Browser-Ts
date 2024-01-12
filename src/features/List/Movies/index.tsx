@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, List } from "./styled";
+import { Header, Wrapper } from "./styled";
 import { movies } from "../../../common/movies";
 import ListTile from "../../../common/Tiles/List";
 import { MovieProps } from "../../../types/movieprops";
@@ -10,8 +10,8 @@ const MovieList = () => {
   return (
     <>
       <Main>
-        <Header>Popular Movies</Header>
-        <List>
+        <Wrapper>
+          <Header>Popular Movies</Header>
           {movies.map(
             ({ title, year, poster, rating, votes, genres }: MovieProps) => (
               <ListTile
@@ -24,7 +24,7 @@ const MovieList = () => {
               />
             )
           )}
-        </List>
+        </Wrapper>
       </Main>
       <Pagination />
     </>

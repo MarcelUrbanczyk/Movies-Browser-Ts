@@ -32,20 +32,3 @@ export const Strong = styled.strong`
   font-weight: 600;
   line-height: 150%;
 `;
-
-export const ArrowWrapper = styled.span<{
-  $flipped?: boolean;
-  $disabled?: boolean;
-}>`
-  color: ${({ theme }) => theme.pagination.arrowActive};
-  ${({ $flipped }) =>
-    $flipped &&
-    css`
-      transform: rotate(180deg);
-    `}
-  ${({ $disabled }) =>
-    $disabled &&
-    css`
-      color: ${({ theme }) => theme.pagination.arrowDisabled};
-    `}
-`;

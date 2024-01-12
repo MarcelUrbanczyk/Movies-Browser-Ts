@@ -14,8 +14,8 @@ export const theme = {
   textPrimary: colors.Woodsmoke,
   textSecondary: colors.Waterloo,
   pagination: {
-    previous: colors.Mystic,
-    next: colors.PattensBlue,
+    disabled: colors.Mystic,
+    active: colors.PattensBlue,
   },
   navigation: {
     background: colors.Woodsmoke,

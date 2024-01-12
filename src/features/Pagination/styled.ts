@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled, css } from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -31,4 +31,21 @@ export const Strong = styled.strong`
   font-size: 16px;
   font-weight: 600;
   line-height: 150%;
+`;
+
+export const ArrowWrapper = styled.span<{
+  $flipped?: boolean;
+  $disabled?: boolean;
+}>`
+  color: ${({ theme }) => theme.pagination.arrowActive};
+  ${({ $flipped }) =>
+    $flipped &&
+    css`
+      transform: rotate(180deg);
+    `}
+  ${({ $disabled }) =>
+    $disabled &&
+    css`
+      color: ${({ theme }) => theme.pagination.arrowDisabled};
+    `}
 `;

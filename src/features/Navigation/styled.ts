@@ -62,34 +62,6 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const IconWrapper = styled.span`
-  width: 40px;
-  height: 40px;
-  @media (max-width: 655px) {
-    height: 35px;
-    width: 35px;
-  }
-  @media (max-width: 460px) {
-    height: 30px;
-    width: 30px;
-  }
-`;
-
-export const LoupeWrapper = styled.span`
-  width: 24px;
-  height: 24px;
-  margin: auto;
-  @media (max-width: 655px) {
-    height: 20px;
-    width: 20px;
-  }
-  @media (max-width: 460px) {
-    height: 16px;
-    width: 16px;
-    margin: 0;
-  }
-`;
-
 export const NavLinks = styled.ul`
   display: flex;
   gap: 16px;

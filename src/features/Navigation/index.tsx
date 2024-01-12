@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  IconWrapper,
   Logo,
   Name,
   NavLink,
@@ -9,7 +8,6 @@ import {
   StyledNavigation,
   Wrapper,
   Input,
-  LoupeWrapper,
 } from "./styled";
 import Icon from "./icon";
 import Loupe from "./loupe";
@@ -18,9 +16,7 @@ const Navigation = () => (
   <StyledNavigation>
     <Wrapper>
       <Logo>
-        <IconWrapper>
-          <Icon />
-        </IconWrapper>
+        <Icon />
         <Name>Movies Browser</Name>
       </Logo>
       <NavLinks>
@@ -29,9 +25,7 @@ const Navigation = () => (
         <NavLink>People</NavLink>
       </NavLinks>
       <SearchBar>
-        <LoupeWrapper>
-          <Loupe />
-        </LoupeWrapper>
+        <Loupe />
         <Input placeholder="Search for movies..." />
       </SearchBar>
     </Wrapper>

@@ -7,7 +7,6 @@ import {
   Title,
   Year,
   Rating,
-  IconWrapper,
   Score,
   Votes,
   GenreList,
@@ -42,9 +41,7 @@ const ListTile = ({
     <Rating>
       {rating && votes ? (
         <>
-          <IconWrapper>
-            <Star />
-          </IconWrapper>
+          <Star />
           <Score>{rating}</Score>
           <Votes>{votes} &nbsp;votes</Votes>
         </>

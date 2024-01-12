@@ -42,11 +42,6 @@ export const Rating = styled.span`
   margin-top: auto;
 `;
 
-export const IconWrapper = styled.span`
-  height: 24px;
-  width: 24px;
-`;
-
 export const Score = styled.p`
   font-size: 16px;
   color: ${({ theme }) => theme.textPrimary};

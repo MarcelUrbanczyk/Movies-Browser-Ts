@@ -1,7 +1,14 @@
 import * as React from "react";
 import { SVGProps } from "react";
+import styled from "styled-components";
+
+const Svg = styled.svg`
+  height: 24px;
+  width: 24px;
+`;
+
 const Star = (props: SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" {...props}>
+  <Svg xmlns="http://www.w3.org/2000/svg" fill="none" {...props}>
     <g clipPath="url(#a)">
       <path
         width="100%"
@@ -14,6 +21,6 @@ const Star = (props: SVGProps<SVGSVGElement>) => (
         <path fill="#fff" d="M0 0h24v24H0z" />
       </clipPath>
     </defs>
-  </svg>
+  </Svg>
 );
 export default Star;

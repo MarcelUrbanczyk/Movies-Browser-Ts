@@ -9,15 +9,18 @@ const MovieList = () => {
     <>
       <Header>Popular Movies</Header>
       <List>
-        {movies.map(({ title, year, poster, rating, votes }: MovieProps) => (
-          <ListTile
-            title={title}
-            year={year}
-            poster={poster}
-            rating={rating}
-            votes={votes}
-          />
-        ))}
+        {movies.map(
+          ({ title, year, poster, rating, votes, genres }: MovieProps) => (
+            <ListTile
+              title={title}
+              year={year}
+              poster={poster}
+              rating={rating}
+              votes={votes}
+              genres={genres}
+            />
+          )
+        )}
       </List>
     </>
   );

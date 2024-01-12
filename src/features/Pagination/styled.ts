@@ -13,6 +13,11 @@ export const Button = styled.button`
   background-color: ${({ theme }) => theme.pagination.active};
   border: none;
   cursor: pointer;
+  color: ${({ theme }) => theme.textPrimary};
+  &:disabled {
+    background-color: ${({ theme }) => theme.pagination.disabled};
+    cursor: not-allowed;
+  }
 `;
 
 export const Pages = styled.p`

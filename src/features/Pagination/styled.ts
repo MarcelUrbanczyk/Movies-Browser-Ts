@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   gap: 12px;
   align-items: center;
   justify-content: center;
+  margin: 0 0 80px 0;
 `;
 
 export const Button = styled.button`

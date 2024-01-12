@@ -5,6 +5,7 @@ const colors = {
   Whisper: "#F5F5FA",
   Mystic: "#E4E6F0",
   PattensBlue: "#D6E4FF",
+  ScienceBlue: "#0044CC",
 };
 
 export const theme = {
@@ -16,6 +17,8 @@ export const theme = {
   pagination: {
     disabled: colors.Mystic,
     active: colors.PattensBlue,
+    arrowActive: colors.ScienceBlue,
+    arrowDisabled: colors.Waterloo,
   },
   navigation: {
     background: colors.Woodsmoke,

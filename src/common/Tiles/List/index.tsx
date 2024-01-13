@@ -11,8 +11,11 @@ import {
   Votes,
   GenreList,
   Genre,
+  MobileWrapper,
+  Wrapper,
 } from "./styled";
-import Star from "../starIcon";
+import icon from "../starIcon.png";
+import { Star } from "../starIcon";
 
 const ListTile = ({
   title,
@@ -29,26 +32,51 @@ const ListTile = ({
         alt={title}
       />
     </Frame>
-    <Title>{title}</Title>
-    {year && <Year>{year}</Year>}
-    {genres && (
-      <GenreList>
-        {genres.map((genre) => (
-          <Genre>{genre}</Genre>
-        ))}
-      </GenreList>
-    )}
-    <Rating>
-      {rating && votes ? (
-        <>
-          <Star />
-          <Score>{rating}</Score>
-          <Votes>{votes} &nbsp;votes</Votes>
-        </>
-      ) : (
-        <Votes>No votes yet</Votes>
+    <Wrapper>
+      <Title>{title}</Title>
+      {year && <Year>{year}</Year>}
+      {genres && (
+        <GenreList>
+          {genres.map((genre) => (
+            <Genre>{genre}</Genre>
+          ))}
+        </GenreList>
       )}
-    </Rating>
+      <Rating>
+        {rating && votes ? (
+          <>
+            <Star src={icon} />
+            <Score>{rating}</Score>
+            <Votes>{votes} &nbsp;votes</Votes>
+          </>
+        ) : (
+          <Votes>No votes yet</Votes>
+        )}
+      </Rating>
+    </Wrapper>
+
+    <MobileWrapper>
+      <Title>{title}</Title>
+      {year && <Year>{year}</Year>}
+      {genres && (
+        <GenreList>
+          {genres.map((genre) => (
+            <Genre>{genre}</Genre>
+          ))}
+        </GenreList>
+      )}
+      <Rating>
+        {rating && votes ? (
+          <>
+            <Star src={icon} />
+            <Score>{rating}</Score>
+            <Votes>{votes} &nbsp;votes</Votes>
+          </>
+        ) : (
+          <Votes>No votes yet</Votes>
+        )}
+      </Rating>
+    </MobileWrapper>
   </Tile>
 );
 export default ListTile;

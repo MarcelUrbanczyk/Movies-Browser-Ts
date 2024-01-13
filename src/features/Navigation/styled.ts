@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const StyledNavigation = styled.nav`
   background-color: ${({ theme }) => theme.navigation.background};
@@ -18,12 +19,13 @@ export const StyledNavigation = styled.nav`
   }
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(NavLink)`
   display: flex;
   gap: 12px;
   max-height: 40px;
   align-items: center;
   cursor: pointer;
+  text-decoration: none;
 `;
 
 export const Name = styled.h1`
@@ -67,7 +69,7 @@ export const NavLinks = styled.ul`
   gap: 16px;
 `;
 
-export const NavLink = styled.li`
+export const StyledNavLink = styled(NavLink)`
   height: 48px;
   padding: 8px 24px;
   align-items: center;
@@ -78,6 +80,7 @@ export const NavLink = styled.li`
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
+  text-decoration: none;
   cursor: pointer;
   @media (max-width: 655px) {
     height: 34px;
@@ -88,7 +91,7 @@ export const NavLink = styled.li`
     font-size: 12px;
   }
   &:hover,
-  &:active {
+  &.active {
     border: 2px solid #fff;
   }
 `;

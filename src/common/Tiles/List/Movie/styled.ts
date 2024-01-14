@@ -118,7 +118,7 @@ export const Wrapper = styled.span`
   flex-direction: column;
   gap: 8px;
   flex-grow: 1;
-  margin-top: 8px;
+  margin-top: 12px;
   @media (max-width: 560px) {
     display: none;
   }

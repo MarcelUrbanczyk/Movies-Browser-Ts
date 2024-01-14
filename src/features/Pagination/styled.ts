@@ -14,11 +14,21 @@ export const Button = styled.button`
   background-color: ${({ theme }) => theme.pagination.active};
   border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: ${({ theme }) => theme.textPrimary};
   &:disabled {
     background-color: ${({ theme }) => theme.pagination.disabled};
     cursor: not-allowed;
   }
+`;
+
+export const Paragraph = styled.p`
+  color: ${({ theme }) => theme.textPrimary};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
 `;
 
 export const Pages = styled.p`

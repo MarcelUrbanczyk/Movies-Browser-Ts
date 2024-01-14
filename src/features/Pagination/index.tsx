@@ -1,5 +1,12 @@
 import Arrow from "./arrowIcon";
-import { Button, Pages, Wrapper, Strong, Paragraph } from "./styled";
+import {
+  Button,
+  Pages,
+  Wrapper,
+  Strong,
+  Paragraph,
+  MobileArrowWrapper,
+} from "./styled";
 
 const Pagination = () => {
   const page: number = 1;
@@ -7,6 +14,9 @@ const Pagination = () => {
     <Wrapper>
       <Button disabled={page === 1}>
         <Arrow $disabled={page === 1} />
+        <MobileArrowWrapper>
+          <Arrow $disabled={page === 1} />
+        </MobileArrowWrapper>
         <Paragraph>First</Paragraph>
       </Button>
       <Button disabled={page === 1}>
@@ -23,6 +33,9 @@ const Pagination = () => {
       <Button disabled={page === 500}>
         <Paragraph>Last</Paragraph>
         <Arrow $flipped $disabled={page === 500} />
+        <MobileArrowWrapper>
+          <Arrow $flipped $disabled={page === 500} />
+        </MobileArrowWrapper>
       </Button>
     </Wrapper>
   );

@@ -1,8 +1,8 @@
 import React from "react";
 import { Header, Wrapper } from "./styled";
 import { movies } from "../../../common/movies";
-import ListTile from "../../../common/Tiles/List";
-import { MovieProps } from "../../../types/movieprops";
+import MovieListTile from "../../../common/Tiles/List/Movie";
+import { MovieProps } from "../../../types/MovieProps";
 import Main from "../../../common/main";
 import Pagination from "../../Pagination";
 
@@ -14,7 +14,7 @@ const MovieList = () => {
           <Header>Popular Movies</Header>
           {movies.map(
             ({ title, year, poster, rating, votes, genres }: MovieProps) => (
-              <ListTile
+              <MovieListTile
                 title={title}
                 year={year}
                 poster={poster}

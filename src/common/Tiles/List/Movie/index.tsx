@@ -1,5 +1,5 @@
 import React from "react";
-import { MovieProps } from "../../../types/movieprops";
+import { MovieProps } from "../../../../types/MovieProps";
 import {
   Poster,
   Tile,
@@ -14,10 +14,10 @@ import {
   MobileWrapper,
   Wrapper,
 } from "./styled";
-import icon from "../starIcon.png";
-import { Star } from "../starIcon";
+import icon from "../../starIcon.png";
+import { Star } from "../../starIcon";
 
-const ListTile = ({
+const MovieListTile = ({
   title,
   year,
   poster,
@@ -79,4 +79,4 @@ const ListTile = ({
     </MobileWrapper>
   </Tile>
 );
-export default ListTile;
+export default MovieListTile;

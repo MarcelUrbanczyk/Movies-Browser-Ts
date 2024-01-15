@@ -1,5 +1,5 @@
 import React from "react";
-import { MovieProps } from "../../../../types/MovieProps";
+import { MovieListTileProps, MovieProps } from "../../../../types/MovieProps";
 import {
   Poster,
   Tile,
@@ -16,6 +16,7 @@ import {
 } from "./styled";
 import icon from "../../starIcon.png";
 import { Star } from "../../starIcon";
+import { getYear } from "../../getYear";
 
 const MovieListTile = ({
   title,
@@ -24,7 +25,7 @@ const MovieListTile = ({
   rating,
   votes,
   genres,
-}: MovieProps) => (
+}: MovieListTileProps) => (
   <Tile>
     <Frame>
       <Poster
@@ -34,7 +35,7 @@ const MovieListTile = ({
     </Frame>
     <Wrapper>
       <Title>{title}</Title>
-      {year && <Year>{year}</Year>}
+      {year && <Year>{getYear(year)}</Year>}
       {genres && (
         <GenreList>
           {genres.map((genre) => (
@@ -46,7 +47,7 @@ const MovieListTile = ({
         {rating && votes ? (
           <>
             <Star src={icon} />
-            <Score>{rating}</Score>
+            <Score>{rating.toFixed(2)}</Score>
             <Votes>{votes} &nbsp;votes</Votes>
           </>
         ) : (
@@ -69,7 +70,7 @@ const MovieListTile = ({
         {rating && votes ? (
           <>
             <Star src={icon} />
-            <Score>{rating}</Score>
+            <Score>{rating.toFixed(2)}</Score>
             <Votes>{votes} &nbsp;votes</Votes>
           </>
         ) : (

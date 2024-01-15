@@ -7,6 +7,8 @@ export const Tile = styled.article`
   padding: 16px;
   display: flex;
   flex-direction: column;
+
+  max-width: 324px;
   @media (max-width: 1220px) {
     padding: 12px;
   }
@@ -82,9 +84,7 @@ export const Votes = styled(Year)``;
 export const GenreList = styled.span`
   display: flex;
   gap: 8px;
-  @media (max-width: 560px) {
-    flex-wrap: wrap;
-  }
+  flex-wrap: wrap;
 `;
 
 export const Genre = styled.div`

@@ -1,34 +1,23 @@
-import React from "react";
-import { Header, Wrapper } from "./styled";
-import { movies } from "../../../common/movies";
-import MovieListTile from "../../../common/Tiles/List/Movie";
-import { MovieProps } from "../../../types/MovieProps";
-import Main from "../../../common/main";
-import Pagination from "../../Pagination";
+import { useQuery } from "@tanstack/react-query";
+import Success from "./Success";
+import { options } from "../../queryOptions";
 
 const MovieList = () => {
-  return (
-    <>
-      <Main>
-        <Wrapper>
-          <Header>Popular Movies</Header>
-          {movies.map(
-            ({ title, year, poster, rating, votes, genres }: MovieProps) => (
-              <MovieListTile
-                title={title}
-                year={year}
-                poster={poster}
-                rating={rating}
-                votes={votes}
-                genres={genres}
-              />
-            )
-          )}
-        </Wrapper>
-      </Main>
-      <Pagination />
-    </>
-  );
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["movies"],
+    queryFn: async () => {
+      const response = await fetch(
+        "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
+        options
+      );
+      const { results } = await response.json();
+      return results;
+    },
+  });
+
+  if (isLoading) return null;
+  if (error) return null;
+  return <Success data={data} />;
 };
 
 export default MovieList;

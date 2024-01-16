@@ -3,7 +3,6 @@ import MovieListTile from "../../../../common/Tiles/List/Movie";
 import { MovieProps } from "../../../../types/MovieProps";
 import Main from "../../../../common/main";
 import Pagination from "../../../Pagination";
-import { movies } from "../../../../common/movies";
 
 const Success = ({ data }) => {
   return (

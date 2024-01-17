@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import Success from "./Success";
 import { options } from "../../queryOptions";
+import Error from "../../Error";
+import Loading from "../../Loading";
 
 const PeopleList = () => {
   const { isLoading, error, data } = useQuery({
@@ -15,8 +17,8 @@ const PeopleList = () => {
     },
   });
 
-  if (isLoading) return null;
-  if (error) return null;
+  if (isLoading) return <Loading />;
+  if (error) return <Error />;
   return <Success data={data} />;
 };
 

@@ -14,6 +14,7 @@ export const theme = {
   alternateBox: colors.Mystic,
   textPrimary: colors.Woodsmoke,
   textSecondary: colors.Waterloo,
+  errorButton: colors.ScienceBlue,
   pagination: {
     disabled: colors.Mystic,
     active: colors.PattensBlue,

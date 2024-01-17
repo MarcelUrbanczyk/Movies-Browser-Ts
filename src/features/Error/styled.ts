@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -52,7 +53,7 @@ export const ErrorMesssage = styled.p`
   }
 `;
 
-export const Button = styled.button`
+export const ButtonLink = styled(NavLink)`
   padding: 16px 24px;
   border-radius: ${({ theme }) => theme.borderRadius};
   background-color: ${({ theme }) => theme.errorButton};
@@ -63,6 +64,7 @@ export const Button = styled.button`
   border: none;
   max-width: 190px;
   margin: 0 auto;
+  text-decoration: none;
   cursor: pointer;
   &:hover {
     background-color: #003399;

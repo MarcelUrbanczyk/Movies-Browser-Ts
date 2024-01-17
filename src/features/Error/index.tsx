@@ -4,9 +4,10 @@ import {
   ErrorIcon,
   ErrorMesssage,
   Wrapper,
-  Button,
+  ButtonLink,
 } from "./styled";
 import errorIcon from "./errorIcon.png";
+import { toHome } from "../../core/routes";
 
 const Error = () => (
   <Main>
@@ -16,7 +17,7 @@ const Error = () => (
       <ErrorMesssage>
         Please check your network connection and try again
       </ErrorMesssage>
-      <Button>Back to home page</Button>
+      <ButtonLink to={toHome}>Back to home page</ButtonLink>
     </Wrapper>
   </Main>
 );

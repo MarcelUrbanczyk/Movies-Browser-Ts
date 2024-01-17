@@ -1,25 +1,23 @@
-import React from "react";
-import { Header, Wrapper } from "./styled";
-import { people } from "../../../common/people";
-import Main from "../../../common/main";
-import Pagination from "../../Pagination";
-import { PeopleProps } from "../../../types/PeopleProps";
-import PeopleListTile from "../../../common/Tiles/List/People";
+import { useQuery } from "@tanstack/react-query";
+import Success from "./Success";
+import { options } from "../../queryOptions";
 
 const PeopleList = () => {
-  return (
-    <>
-      <Main>
-        <Wrapper>
-          <Header>Popular People</Header>
-          {people.map(({ name, image }: PeopleProps) => (
-            <PeopleListTile name={name} image={image} />
-          ))}
-        </Wrapper>
-      </Main>
-      <Pagination />
-    </>
-  );
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["people"],
+    queryFn: async () => {
+      const response = await fetch(
+        "https://api.themoviedb.org/3/person/popular",
+        options
+      );
+      const { results } = await response.json();
+      return results;
+    },
+  });
+
+  if (isLoading) return null;
+  if (error) return null;
+  return <Success data={data} />;
 };
 
 export default PeopleList;

@@ -10,12 +10,14 @@ export const Tile = styled.article`
 
   max-width: 324px;
   @media (max-width: 1220px) {
+    max-width: 245px;
     padding: 12px;
   }
   @media (max-width: 560px) {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 16px;
+    max-width: none;
   }
 `;
 

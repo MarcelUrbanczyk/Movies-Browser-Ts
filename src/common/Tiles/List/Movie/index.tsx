@@ -58,7 +58,7 @@ const MovieListTile = ({
 
     <MobileWrapper>
       <Title>{title}</Title>
-      {year && <Year>{year}</Year>}
+      {year && <Year>{getYear(year)}</Year>}
       {genres && (
         <GenreList>
           {genres.map((genre) => (

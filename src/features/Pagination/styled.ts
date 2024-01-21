@@ -1,23 +1,23 @@
 import { styled, css } from "styled-components";
 
 export const Wrapper = styled.div`
+  align-items: center;
   display: flex;
   gap: 12px;
-  align-items: center;
   justify-content: center;
   margin: 0 0 80px 0;
 `;
 
 export const Button = styled.button`
-  padding: 8px 16px;
-  border-radius: ${({ theme }) => theme.borderRadius};
+  align-items: center;
   background-color: ${({ theme }) => theme.pagination.active};
+  border-radius: ${({ theme }) => theme.borderRadius};
   border: none;
+  color: ${({ theme }) => theme.textPrimary};
   cursor: pointer;
   display: flex;
-  align-items: center;
   gap: 8px;
-  color: ${({ theme }) => theme.textPrimary};
+  padding: 8px 16px;
   &:disabled {
     background-color: ${({ theme }) => theme.pagination.disabled};
     cursor: not-allowed;
@@ -39,9 +39,9 @@ export const Paragraph = styled.p`
 `;
 
 export const Pages = styled.p`
+  color: ${({ theme }) => theme.textSecondary};
   font-size: 16px;
   line-height: 150%;
-  color: ${({ theme }) => theme.textSecondary};
   @media (max-width: 560px) {
     font-size: 10px;
   }

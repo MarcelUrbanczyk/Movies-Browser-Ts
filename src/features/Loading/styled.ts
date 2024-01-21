@@ -22,7 +22,7 @@ export const LoadingIcon = styled.img`
   }
 
   @media (max-width: 560px) {
-    width: 35px;
     height: 35px;
+    width: 35px;
   }
 `;

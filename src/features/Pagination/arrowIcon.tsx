@@ -9,8 +9,8 @@ interface ArrowProps extends SVGProps<SVGSVGElement> {
 
 const Svg = styled.svg<ArrowProps>`
   color: ${({ theme }) => theme.pagination.arrowActive};
-  width: 7px;
   height: 11px;
+  width: 7px;
   ${({ $flipped }) =>
     $flipped &&
     css`

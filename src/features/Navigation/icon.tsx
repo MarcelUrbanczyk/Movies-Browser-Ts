@@ -3,8 +3,8 @@ import { SVGProps } from "react";
 import { styled } from "styled-components";
 
 const Svg = styled.svg`
-  width: 40px;
   height: 40px;
+  width: 40px;
   @media (max-width: 655px) {
     height: 35px;
     width: 35px;

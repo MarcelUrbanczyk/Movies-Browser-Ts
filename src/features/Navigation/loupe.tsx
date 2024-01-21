@@ -3,17 +3,17 @@ import { SVGProps } from "react";
 import { styled } from "styled-components";
 
 const Svg = styled.svg`
-  width: 24px;
   height: 24px;
   margin: auto;
+  width: 24px;
   @media (max-width: 655px) {
     height: 20px;
     width: 20px;
   }
   @media (max-width: 460px) {
     height: 16px;
-    width: 16px;
     margin: 0;
+    width: 16px;
   }
 `;
 

@@ -2,11 +2,11 @@ import { styled } from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const StyledNavigation = styled.nav`
-  background-color: ${({ theme }) => theme.navigation.background};
-  height: 94px;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  background-color: ${({ theme }) => theme.navigation.background};
+  display: flex;
+  height: 94px;
+  justify-content: center;
   padding: 0 40px;
   @media (max-width: 1220px) {
     height: 160px;
@@ -20,20 +20,20 @@ export const StyledNavigation = styled.nav`
 `;
 
 export const Logo = styled(NavLink)`
+  align-items: center;
+  cursor: pointer;
   display: flex;
   gap: 12px;
   max-height: 40px;
-  align-items: center;
-  cursor: pointer;
   text-decoration: none;
 `;
 
 export const Name = styled.h1`
+  color: ${({ theme }) => theme.navigation.logo};
   font-size: 24px;
   font-weight: 500;
-  line-height: 40px;
   letter-spacing: -1.5px;
-  color: ${({ theme }) => theme.navigation.logo};
+  line-height: 40px;
   @media (max-width: 655px) {
     font-size: 16px;
   }
@@ -43,19 +43,19 @@ export const Name = styled.h1`
 `;
 
 export const Wrapper = styled.div`
-  width: 1368px;
+  align-items: center;
   display: flex;
   gap: 80px;
-  align-items: center;
+  width: 1368px;
   @media (max-width: 1220px) {
-    justify-content: space-between;
     flex-wrap: wrap;
     gap: 24px;
+    justify-content: space-between;
 
     @media (max-width: 655px) {
-      justify-content: space-between;
       flex-wrap: wrap;
       gap: 18px;
+      justify-content: space-between;
     }
     @media (max-width: 460px) {
       flex-direction: column;

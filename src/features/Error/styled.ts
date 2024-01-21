@@ -4,10 +4,10 @@ import { NavLink } from "react-router-dom";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  margin-top: 150px;
   gap: 24px;
+  justify-content: center;
+  margin-top: 150px;
+  text-align: center;
   @media (max-width: 680px) {
     margin-top: 100px;
   }
@@ -17,8 +17,8 @@ export const Wrapper = styled.div`
 `;
 
 export const ErrorIcon = styled.img`
-  max-width: 120px;
   margin: 0 auto;
+  max-width: 120px;
   @media (max-width: 680px) {
     max-width: 80px;
   }
@@ -54,28 +54,28 @@ export const ErrorMesssage = styled.p`
 `;
 
 export const ButtonLink = styled(NavLink)`
-  padding: 16px 24px;
-  border-radius: ${({ theme }) => theme.borderRadius};
   background-color: ${({ theme }) => theme.errorButton};
+  border-radius: ${({ theme }) => theme.borderRadius};
+  border: none;
   color: #fff;
+  cursor: pointer;
   font-size: 14px;
   font-weight: 700;
   line-height: 19px;
-  border: none;
-  max-width: 190px;
   margin: 0 auto;
+  max-width: 190px;
+  padding: 16px 24px;
   text-decoration: none;
-  cursor: pointer;
   &:hover {
     background-color: #003399;
   }
   @media (max-width: 680px) {
-    padding: 12px 16px;
     font-size: 12px;
     font-weight: 500;
+    padding: 12px 16px;
   }
   @media (max-width: 560px) {
-    padding: 8px 12px;
     font-size: 10px;
+    padding: 8px 12px;
   }
 `;

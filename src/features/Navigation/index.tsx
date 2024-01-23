@@ -16,7 +16,6 @@ import { toHome, toMovies, toPeople, toShows } from "../../core/routes";
 
 const Navigation = () => {
   const location = useLocation();
-  console.log(location.pathname.startsWith("/movies"));
   return (
     <StyledNavigation>
       <Wrapper>

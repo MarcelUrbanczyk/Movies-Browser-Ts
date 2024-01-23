@@ -1,6 +1,5 @@
-import { PeopleProps } from "../../../../types/PeopleProps";
 import { Frame, Name, Tile, Image } from "./styled";
-import { PeopleTileProps } from "../../../../types/PeopleProps";
+import { PeopleTileProps } from "../../../../features/types";
 
 const PeopleListTile = ({ name, image }: PeopleTileProps) => (
   <Tile>

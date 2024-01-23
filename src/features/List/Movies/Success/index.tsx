@@ -1,6 +1,6 @@
 import { Header, Wrapper } from "./styled";
 import MovieListTile from "../../../../common/Tiles/List/Movie";
-import { MovieProps } from "../../../../types/MovieProps";
+import { MovieProps } from "../../../types";
 import Main from "../../../../common/main";
 import Pagination from "../../../Pagination";
 
@@ -18,14 +18,17 @@ const Success = ({ data }) => {
               vote_average: rating,
               vote_count: votes,
               genre_ids: genres,
+              id,
             }: MovieProps) => (
               <MovieListTile
+                key={id}
                 title={title}
                 year={year}
                 poster={poster}
                 rating={rating}
                 votes={votes}
                 genres={genres}
+                id={id}
               />
             )
           )}

@@ -2,7 +2,7 @@ import { Header, Wrapper } from "./styled";
 import Main from "../../../../common/main";
 import Pagination from "../../../Pagination";
 import PeopleListTile from "../../../../common/Tiles/List/People";
-import { PeopleProps } from "../../../../types/PeopleProps";
+import { PeopleProps } from "../../../types";
 
 const Success = ({ data }) => {
   return (

@@ -2,6 +2,7 @@ import Navigation from "../features/Navigation";
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import MovieList from "../features/List/Movies";
 import PeopleList from "../features/List/People";
+import ShowList from "../features/List/Shows";
 
 const App = () => (
   <HashRouter>
@@ -10,7 +11,9 @@ const App = () => (
       <Route path="/movies">
         <MovieList />
       </Route>
-      <Route path="/shows"></Route>
+      <Route path="/shows">
+        <ShowList />
+      </Route>
       <Route path="/people">
         <PeopleList />
       </Route>

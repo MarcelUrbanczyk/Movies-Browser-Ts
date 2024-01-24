@@ -1,9 +1,25 @@
 import { useQuery } from "@tanstack/react-query";
 import { options } from "./queryOptions";
 
-export const useGetGenres = () => {
+export const useGetMovieGenres = () => {
   useQuery({
-    queryKey: ["genres"],
+    queryKey: ["movieGenres"],
+    queryFn: async () => {
+      const response = await fetch(
+        "https://api.themoviedb.org/3/genre/movie/list",
+        options
+      );
+
+      const { genres } = await response.json();
+
+      return genres;
+    },
+  });
+};
+
+export const useGetShowGenres = () => {
+  useQuery({
+    queryKey: ["showGenres"],
     queryFn: async () => {
       const response = await fetch(
         "https://api.themoviedb.org/3/genre/movie/list",

@@ -8,7 +8,17 @@ export type MovieProps = {
   id: number;
 };
 
-export type MovieListTileProps = {
+export type ShowProps = {
+  name: string;
+  first_air_date: string;
+  poster_path?: string;
+  vote_average: number;
+  vote_count: number;
+  genre_ids: number[];
+  id: number;
+};
+
+export type ScreenplayListTileProps = {
   title: string;
   year?: string;
   poster?: string;

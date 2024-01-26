@@ -3,18 +3,12 @@ import Success from "./Success";
 import { options } from "../../queryOptions";
 import Error from "../../Error";
 import Loading from "../../Loading";
+import { getPeople } from "../../getData";
 
 const PeopleList = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ["people"],
-    queryFn: async () => {
-      const response = await fetch(
-        "https://api.themoviedb.org/3/person/popular",
-        options
-      );
-      const { results } = await response.json();
-      return results;
-    },
+    queryFn: getPeople,
   });
 
   if (isLoading) return <Loading />;

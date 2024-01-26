@@ -3,18 +3,12 @@ import Success from "./Success";
 import { options } from "../../queryOptions";
 import Error from "../../Error";
 import Loading from "../../Loading";
+import { getMovies } from "../../getData";
 
 const MovieList = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ["movies"],
-    queryFn: async () => {
-      const response = await fetch(
-        "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
-        options
-      );
-      const { results } = await response.json();
-      return results;
-    },
+    queryFn: getMovies,
   });
 
   if (isLoading) return <Loading />;

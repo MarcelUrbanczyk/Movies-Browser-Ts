@@ -16,10 +16,6 @@ import {
 import icon from "../../starIcon.png";
 import { Star } from "../../starIcon";
 import { getYear } from "../../getYear";
-import {
-  useGetMovieGenres,
-  useGetShowGenres,
-} from "../../../../features/useGetGenres";
 
 const ScreenplayListTile = ({
   title,
@@ -29,9 +25,6 @@ const ScreenplayListTile = ({
   votes,
   genres,
 }: ScreenplayListTileProps) => {
-  const genreIds = useGetMovieGenres();
-  console.log(genreIds);
-
   return (
     <Tile>
       <Frame>

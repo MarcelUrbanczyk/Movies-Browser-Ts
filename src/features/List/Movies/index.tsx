@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import Success from "./Success";
-import { options } from "../../queryOptions";
 import Error from "../../Error";
 import Loading from "../../Loading";
 import { getMovies } from "../../getData";

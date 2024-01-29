@@ -25,6 +25,7 @@ export type ScreenplayListTileProps = {
   rating?: number;
   votes?: number;
   genres?: number[];
+  isMovie: boolean;
   id: number;
 };
 

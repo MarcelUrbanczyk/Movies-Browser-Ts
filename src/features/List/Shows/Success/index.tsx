@@ -28,6 +28,7 @@ const Success = ({ data }) => {
                 rating={rating}
                 votes={votes}
                 genres={genres}
+                isMovie={false}
                 id={id}
               />
             )

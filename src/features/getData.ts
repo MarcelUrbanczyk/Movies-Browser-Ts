@@ -5,7 +5,9 @@ export const getMovieGenres = async () => {
     "https://api.themoviedb.org/3/genre/movie/list",
     options
   );
-  return response.json();
+  const { genres } = await response.json();
+
+  return genres;
 };
 
 export const getShowGenres = async () => {

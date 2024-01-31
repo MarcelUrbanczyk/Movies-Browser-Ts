@@ -1,13 +1,10 @@
 import { GenreProps } from "../../features/types";
 
 export const filterGenres = (genreIds: GenreProps[], genres: number[]) => {
-  const filteredGenres = genreIds.filter((genre) => {
-    genres.forEach((id) => {
-      if (genre.id === id) {
-        return genre;
-      }
-    });
-  });
+  if (!genreIds || !genres) return;
+  const filteredGenres = genreIds.filter((genre) =>
+    genres.find((id) => id === genre.id)
+  );
 
   return filteredGenres;
 };

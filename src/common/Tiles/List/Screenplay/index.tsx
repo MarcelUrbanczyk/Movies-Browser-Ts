@@ -1,4 +1,7 @@
-import { ScreenplayListTileProps } from "../../../../features/types";
+import {
+  GenreProps,
+  ScreenplayListTileProps,
+} from "../../../../features/types";
 import {
   Poster,
   Tile,
@@ -16,7 +19,10 @@ import {
 import icon from "../../starIcon.png";
 import { Star } from "../../starIcon";
 import { getYear } from "../../getYear";
-
+import { useQuery } from "@tanstack/react-query";
+import { getShowGenres, getMovieGenres } from "../../../../features/getData";
+import { filterGenres } from "../../filterGenres";
+import { useEffect, useState } from "react";
 const ScreenplayListTile = ({
   title,
   year,
@@ -24,7 +30,21 @@ const ScreenplayListTile = ({
   rating,
   votes,
   genres,
+  isMovie,
 }: ScreenplayListTileProps) => {
+  const [genreList, setGenreList] = useState<GenreProps[]>([]);
+
+  const { isLoading, error, data } = useQuery({
+    queryKey: ["genres"],
+    queryFn: isMovie ? getMovieGenres : getShowGenres,
+  });
+
+  useEffect(() => {
+    if (genres && data) {
+      const filteredGenres = filterGenres(data, genres!);
+      setGenreList(filteredGenres!);
+    }
+  }, [data]);
   return (
     <Tile>
       <Frame>
@@ -36,10 +56,10 @@ const ScreenplayListTile = ({
       <Wrapper>
         <Title>{title}</Title>
         {year && <Year>{getYear(year)}</Year>}
-        {genres && (
+        {genreList && (
           <GenreList>
-            {genres.map((genre) => (
-              <Genre key={genre}>{genre}</Genre>
+            {genreList.map((genre) => (
+              <Genre key={genre.id}>{genre.name}</Genre>
             ))}
           </GenreList>
         )}
@@ -59,10 +79,10 @@ const ScreenplayListTile = ({
       <MobileWrapper>
         <Title>{title}</Title>
         {year && <Year>{getYear(year)}</Year>}
-        {genres && (
+        {genreList && (
           <GenreList>
-            {genres.map((genre) => (
-              <Genre key={genre}>{genre}</Genre>
+            {genreList.map((genre) => (
+              <Genre key={genre.id}>{genre.name}</Genre>
             ))}
           </GenreList>
         )}

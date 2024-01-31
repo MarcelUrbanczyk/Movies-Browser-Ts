@@ -1,5 +1,5 @@
 import { Header, Wrapper } from "./styled";
-import MovieListTile from "../../../../common/Tiles/List/Screenplay";
+import ScreenplayListTile from "../../../../common/Tiles/List/Screenplay";
 import { MovieProps } from "../../../types";
 import Main from "../../../../common/main";
 import Pagination from "../../../Pagination";
@@ -20,7 +20,7 @@ const Success = ({ data }) => {
               genre_ids: genres,
               id,
             }: MovieProps) => (
-              <MovieListTile
+              <ScreenplayListTile
                 key={id}
                 title={title}
                 year={year}
@@ -29,6 +29,7 @@ const Success = ({ data }) => {
                 votes={votes}
                 genres={genres}
                 id={id}
+                isMovie
               />
             )
           )}

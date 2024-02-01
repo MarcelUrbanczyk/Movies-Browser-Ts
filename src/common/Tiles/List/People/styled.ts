@@ -9,10 +9,10 @@ export const Tile = styled.article`
   flex-direction: column;
   gap: 12px;
   box-shadow: ${({ theme }) => theme.shadow};
-  @media (max-width: 1220px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     max-width: 164px;
   }
-  @media (max-width: 560px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     max-width: 136px;
     gap: 8px;
     padding: 8px;
@@ -24,11 +24,11 @@ export const Frame = styled.span`
   height: 231px;
   border-radius: ${({ theme }) => theme.borderRadius};
   overflow: hidden;
-  @media (max-width: 1220px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     width: 132px;
     height: 173px;
   }
-  @media (max-width: 560px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 120px;
     height: 178px;
   }
@@ -40,10 +40,10 @@ export const Name = styled.p`
   font-size: 22px;
   font-weight: 500;
   line-height: 130%;
-  @media (max-width: 1220px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     font-size: 18px;
   }
-  @media (max-width: 560px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 14px;
   }
 `;

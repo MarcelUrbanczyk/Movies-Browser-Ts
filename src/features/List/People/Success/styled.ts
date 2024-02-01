@@ -29,7 +29,7 @@ export const Wrapper = styled.div`
   grid-template-columns: repeat(auto-fit, 1fr);
   justify-content: center;
   margin: 24px 0;
-  @media (max-width: 560px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     gap: 12px;
   }
 `;

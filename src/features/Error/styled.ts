@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   @media (max-width: 680px) {
     margin-top: 100px;
   }
-  @media (max-width: 560px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin-top: 60px;
   }
 `;
@@ -22,7 +22,7 @@ export const ErrorIcon = styled.img`
   @media (max-width: 680px) {
     max-width: 80px;
   }
-  @media (max-width: 560px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     max-width: 60px;
   }
 `;
@@ -35,7 +35,7 @@ export const ErrorHeader = styled.h2`
   @media (max-width: 680px) {
     font-size: 30px;
   }
-  @media (max-width: 560px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 20px;
   }
 `;
@@ -48,7 +48,7 @@ export const ErrorMesssage = styled.p`
   @media (max-width: 680px) {
     font-size: 18px;
   }
-  @media (max-width: 560px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 12px;
   }
 `;
@@ -74,7 +74,7 @@ export const ButtonLink = styled(NavLink)`
     font-weight: 500;
     padding: 12px 16px;
   }
-  @media (max-width: 560px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 10px;
     padding: 8px 12px;
   }

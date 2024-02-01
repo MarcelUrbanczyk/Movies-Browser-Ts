@@ -10,7 +10,7 @@ export const Header = styled.h2`
     font-size: 30px;
     grid-column: span 3;
   }
-  @media (max-width: 1220px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     grid-column: span 4;
   }
   @media (max-width: 1140px) {
@@ -19,7 +19,7 @@ export const Header = styled.h2`
   @media (max-width: 850px) {
     grid-column: span 2;
   }
-  @media (max-width: 560px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 18px;
     grid-column: span 1;
   }
@@ -31,7 +31,7 @@ export const Wrapper = styled.div`
   grid-template-columns: repeat(auto-fit, 1fr);
   justify-content: center;
   margin: 24px 0;
-  @media (max-width: 560px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     gap: 12px;
   }
 `;

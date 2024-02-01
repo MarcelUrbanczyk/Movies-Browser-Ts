@@ -8,7 +8,7 @@ export const StyledNavigation = styled.nav`
   height: 94px;
   justify-content: center;
   padding: 0 40px;
-  @media (max-width: 1220px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     height: 160px;
   }
   @media (max-width: 655px) {
@@ -47,7 +47,7 @@ export const Wrapper = styled.div`
   display: flex;
   gap: 80px;
   width: 1368px;
-  @media (max-width: 1220px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     flex-wrap: wrap;
     gap: 24px;
     justify-content: space-between;
@@ -107,7 +107,7 @@ export const SearchBar = styled.div`
   display: flex;
   gap: 16px;
   align-items: center;
-  @media (max-width: 1220px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     flex-basis: 100%;
   }
   @media (max-width: 655px) {

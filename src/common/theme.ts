@@ -26,6 +26,10 @@ export const theme = {
     logo: colors.White,
     text: colors.Waterloo,
   },
+  breakpoints: {
+    mobileMax: "1220px",
+    mobile: "560px",
+  },
   borderRadius: "5px",
   shadow: "0px 4px 12px 0px rgba(186, 199, 213, 0.50)",
 } as const;

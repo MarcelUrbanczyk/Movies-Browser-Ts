@@ -21,11 +21,16 @@ export const getShowGenres = async () => {
   return genres;
 };
 
-export const getMovies = async () => {
-  const response = await fetch(
-    "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
-    options
-  );
+export const getMovies = async (query: string | null, page: number) => {
+  const urlPopular = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${
+    page ? page : 1
+  }`;
+
+  const urlSearch = `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=${
+    page ? page : 1
+  }'`;
+
+  const response = await fetch(query ? urlSearch : urlPopular, options);
   const { results } = await response.json();
   return results;
 };

@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Logo,
   Name,
@@ -11,11 +10,25 @@ import {
 } from "./styled";
 import Icon from "./icon";
 import Loupe from "./loupe";
-import { useLocation } from "react-router";
+import { useHistory } from "react-router";
 import { toHome, toMovies, toPeople, toShows } from "../../core/routes";
+import { useState } from "react";
 
 const Navigation = () => {
-  const location = useLocation();
+  const history = useHistory();
+
+  const [search, setSearch] = useState("");
+
+  const onInputChange = (target: HTMLInputElement) => {
+    const searchParams = new URLSearchParams();
+    if (target.value.trim() !== "") {
+      searchParams.set("search", target.value);
+    } else {
+      searchParams.delete("search");
+    }
+    history.push({ search: searchParams.toString() });
+  };
+
   return (
     <StyledNavigation>
       <Wrapper>
@@ -30,7 +43,15 @@ const Navigation = () => {
         </NavLinks>
         <SearchBar>
           <Loupe />
-          <Input placeholder="Search for movies..." />
+          <Input
+            value={search}
+            onChange={(event) => {
+              event.preventDefault();
+              setSearch(event.target.value);
+              onInputChange(event.target);
+            }}
+            placeholder="Search for movies..."
+          />
         </SearchBar>
       </Wrapper>
     </StyledNavigation>

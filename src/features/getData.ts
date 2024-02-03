@@ -21,7 +21,10 @@ export const getShowGenres = async () => {
   return genres;
 };
 
-export const getMovies = async (query: string | null, page: number) => {
+export const getMovies = async (
+  query: string | null | undefined,
+  page: number
+) => {
   const urlPopular = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${
     page ? page : 1
   }`;

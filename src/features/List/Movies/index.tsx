@@ -19,8 +19,6 @@ const MovieList = () => {
   if (isLoading) return <Loading />;
   if (error) return <Error />;
 
-  console.log(data);
-
   const {
     results: movies,
     total_results: totalMovies,

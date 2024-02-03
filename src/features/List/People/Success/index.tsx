@@ -4,18 +4,18 @@ import Pagination from "../../../Pagination";
 import PeopleListTile from "../../../../common/Tiles/List/People";
 import { PeopleProps } from "../../../types";
 
-const Success = ({ data }) => {
+const Success = ({ people, totalPeople, totalPages, query }) => {
   return (
     <>
       <Main>
         <Wrapper>
           <Header>Popular People</Header>
-          {data.map(({ name, profile_path: image }: PeopleProps) => (
+          {people.map(({ name, profile_path: image }: PeopleProps) => (
             <PeopleListTile name={name} image={image} />
           ))}
         </Wrapper>
       </Main>
-      <Pagination />
+      <Pagination totalPages={totalPages} />
     </>
   );
 };

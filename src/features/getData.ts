@@ -37,18 +37,24 @@ export const getMovies = async (
   return await response.json();
 };
 
-export const getPeople = async () => {
-  const response = await fetch(
-    "https://api.themoviedb.org/3/person/popular",
-    options
-  );
+export const getPeople = async (
+  query: string | null | undefined,
+  page: number
+) => {
+  const urlPopular = "https://api.themoviedb.org/3/person/popular";
+  const urlSearch = `https://api.themoviedb.org/3/search/person?query=${query}&include_adult=false&language=en-US&page=${page}`;
+
+  const response = await fetch(query ? urlSearch : urlPopular, options);
   return await response.json();
 };
 
-export const getShows = async () => {
-  const response = await fetch(
-    "https://api.themoviedb.org/3/tv/popular",
-    options
-  );
+export const getShows = async (
+  query: string | null | undefined,
+  page: number
+) => {
+  const urlPopular = "https://api.themoviedb.org/3/tv/popular";
+  const urlSearch = `https://api.themoviedb.org/3/search/tv?query=${query}&include_adult=false&language=en-US&page=${page}`;
+
+  const response = await fetch(query ? urlSearch : urlPopular, options);
   return await response.json();
 };

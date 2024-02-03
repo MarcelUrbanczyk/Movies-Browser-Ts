@@ -4,13 +4,13 @@ import { ShowProps } from "../../../types";
 import Main from "../../../../common/main";
 import Pagination from "../../../Pagination";
 
-const Success = ({ data }) => {
+const Success = ({ shows, totalShows, totalPages, query }) => {
   return (
     <>
       <Main>
         <Wrapper>
           <Header>Popular Movies</Header>
-          {data.map(
+          {shows.map(
             ({
               name: name,
               first_air_date: year,
@@ -35,7 +35,7 @@ const Success = ({ data }) => {
           )}
         </Wrapper>
       </Main>
-      <Pagination />
+      <Pagination totalPages={totalPages} />
     </>
   );
 };

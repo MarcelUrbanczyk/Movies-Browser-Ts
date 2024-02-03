@@ -34,8 +34,7 @@ export const getMovies = async (
   }'`;
 
   const response = await fetch(query ? urlSearch : urlPopular, options);
-  const { results } = await response.json();
-  return results;
+  return await response.json();
 };
 
 export const getPeople = async () => {
@@ -43,8 +42,7 @@ export const getPeople = async () => {
     "https://api.themoviedb.org/3/person/popular",
     options
   );
-  const { results } = await response.json();
-  return results;
+  return await response.json();
 };
 
 export const getShows = async () => {
@@ -52,6 +50,5 @@ export const getShows = async () => {
     "https://api.themoviedb.org/3/tv/popular",
     options
   );
-  const { results } = await response.json();
-  return results;
+  return await response.json();
 };

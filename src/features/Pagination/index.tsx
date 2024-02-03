@@ -7,9 +7,19 @@ import {
   Paragraph,
   MobileArrowWrapper,
 } from "./styled";
+import { useState, useEffect } from "react";
 
-const Pagination = () => {
+const Pagination = ({ totalPages }) => {
   const page: number = 1;
+
+  const [maxPage, setMaxPage] = useState(500);
+
+  useEffect(() => {
+    if (totalPages < 500) {
+      setMaxPage(totalPages);
+    }
+  }, [totalPages]);
+
   return (
     <Wrapper>
       <Button disabled={page === 1}>
@@ -24,17 +34,17 @@ const Pagination = () => {
         <Paragraph>Previous</Paragraph>
       </Button>
       <Pages>
-        Page <Strong>1</Strong> of <Strong>500</Strong>
+        Page <Strong>1</Strong> of <Strong>{maxPage}</Strong>
       </Pages>
-      <Button disabled={page === 500}>
+      <Button disabled={page === maxPage}>
         <Paragraph>Next</Paragraph>
-        <Arrow $flipped $disabled={page === 500} />
+        <Arrow $flipped $disabled={page === maxPage} />
       </Button>
-      <Button disabled={page === 500}>
+      <Button disabled={page === maxPage}>
         <Paragraph>Last</Paragraph>
-        <Arrow $flipped $disabled={page === 500} />
+        <Arrow $flipped $disabled={page === maxPage} />
         <MobileArrowWrapper>
-          <Arrow $flipped $disabled={page === 500} />
+          <Arrow $flipped $disabled={page === maxPage} />
         </MobileArrowWrapper>
       </Button>
     </Wrapper>

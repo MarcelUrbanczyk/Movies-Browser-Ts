@@ -18,7 +18,23 @@ const MovieList = () => {
 
   if (isLoading) return <Loading />;
   if (error) return <Error />;
-  return <Success data={data} />;
+
+  console.log(data);
+
+  const {
+    results: movies,
+    total_results: totalMovies,
+    total_pages: totalPages,
+  } = data;
+
+  return (
+    <Success
+      movies={movies}
+      query={query}
+      totalMovies={totalMovies}
+      totalPages={totalPages}
+    />
+  );
 };
 
 export default MovieList;

@@ -4,13 +4,17 @@ import { MovieProps } from "../../../types";
 import Main from "../../../../common/main";
 import Pagination from "../../../Pagination";
 
-const Success = ({ data }) => {
+const Success = ({ movies, query, totalMovies, totalPages }) => {
   return (
     <>
       <Main>
         <Wrapper>
-          <Header>Popular Movies</Header>
-          {data.map(
+          <Header>
+            {!query
+              ? "Popular movies"
+              : `Search results for "${query}" (${totalMovies})`}
+          </Header>
+          {movies.map(
             ({
               title,
               release_date: year,
@@ -35,7 +39,7 @@ const Success = ({ data }) => {
           )}
         </Wrapper>
       </Main>
-      <Pagination />
+      <Pagination totalPages={totalPages} />
     </>
   );
 };

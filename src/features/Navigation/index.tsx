@@ -10,14 +10,14 @@ import {
 } from "./styled";
 import Icon from "./icon";
 import Loupe from "./loupe";
-import { useHistory } from "react-router";
+import { useHistory, useLocation } from "react-router";
 import { toHome, toMovies, toPeople, toShows } from "../../core/routes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Navigation = () => {
   const history = useHistory();
-
-  const [search, setSearch] = useState("");
+  const location = useLocation();
+  const path = location.pathname;
 
   const onInputChange = (target: HTMLInputElement) => {
     const searchParams = new URLSearchParams();
@@ -28,6 +28,18 @@ const Navigation = () => {
     }
     history.push({ search: searchParams.toString() });
   };
+
+  useEffect(() => {
+    const placeholderString = path.split("/")[1];
+    setSearch("");
+    setInputPlaceholder(`Search for ${placeholderString}...`);
+    console.log(1);
+  }, [path]);
+
+  const [search, setSearch] = useState("");
+  const [inputPlaceholder, setInputPlaceholder] = useState(
+    `Search for ...` as string
+  );
 
   return (
     <StyledNavigation>
@@ -50,7 +62,7 @@ const Navigation = () => {
               setSearch(event.target.value);
               onInputChange(event.target);
             }}
-            placeholder="Search for movies..."
+            placeholder={inputPlaceholder}
           />
         </SearchBar>
       </Wrapper>

@@ -41,7 +41,7 @@ const Success = ({ shows, totalShows, totalPages, query }) => {
           )}
         </Wrapper>
       </Main>
-      {shows.length > 0 && <Pagination totalPages={totalPages} />}
+      {shows.length > 20 && <Pagination totalPages={totalPages} />}
     </>
   );
 };

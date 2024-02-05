@@ -12,6 +12,8 @@ const Success = ({ movies, query, totalMovies, totalPages }) => {
           <Header>
             {!query
               ? "Popular movies"
+              : totalMovies === 0 && query
+              ? `Sorry, there are no results for "${query}"`
               : `Search results for "${query}" (${totalMovies})`}
           </Header>
           {movies.map(
@@ -39,7 +41,7 @@ const Success = ({ movies, query, totalMovies, totalPages }) => {
           )}
         </Wrapper>
       </Main>
-      <Pagination totalPages={totalPages} />
+      {movies.length > 20 && <Pagination totalPages={totalPages} />}
     </>
   );
 };

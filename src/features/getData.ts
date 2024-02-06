@@ -25,8 +25,8 @@ export const getMovies = async (
   query: string | null | undefined,
   page: number
 ) => {
-  const urlPopular = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${
-    page ? page : 1
+  const urlPopular = `https://api.themoviedb.org/3/movie/popular${
+    page ? `?page=${page}` : ""
   }`;
 
   const urlSearch = `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=${
@@ -41,7 +41,9 @@ export const getPeople = async (
   query: string | null | undefined,
   page: number
 ) => {
-  const urlPopular = "https://api.themoviedb.org/3/person/popular";
+  const urlPopular = `https://api.themoviedb.org/3/person/popular${
+    page ? `?page=${page}` : ""
+  }`;
   const urlSearch = `https://api.themoviedb.org/3/search/person?query=${query}&include_adult=false&language=en-US&page=${page}`;
 
   const response = await fetch(query ? urlSearch : urlPopular, options);
@@ -52,7 +54,9 @@ export const getShows = async (
   query: string | null | undefined,
   page: number
 ) => {
-  const urlPopular = "https://api.themoviedb.org/3/tv/popular";
+  const urlPopular = `https://api.themoviedb.org/3/tv/popular${
+    page ? `?page=${page}` : ""
+  }`;
   const urlSearch = `https://api.themoviedb.org/3/search/tv?query=${query}&include_adult=false&language=en-US&page=${page}`;
 
   const response = await fetch(query ? urlSearch : urlPopular, options);

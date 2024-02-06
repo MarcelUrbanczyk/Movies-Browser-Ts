@@ -21,7 +21,7 @@ const Success = ({ people, totalPeople, totalPages, query }) => {
           ))}
         </Wrapper>
       </Main>
-      {people.length > 20 && <Pagination totalPages={totalPages} />}
+      {totalPeople > 20 && <Pagination totalPages={totalPages} />}
     </>
   );
 };

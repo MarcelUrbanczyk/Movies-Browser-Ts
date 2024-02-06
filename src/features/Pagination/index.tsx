@@ -40,7 +40,9 @@ const Pagination = ({ totalPages }) => {
         break;
     }
 
-    history.push({ search: `?page=${newPage}` });
+    params.set("page", newPage.toString());
+
+    history.push({ search: params.toString() });
     setPage(newPage);
   };
 

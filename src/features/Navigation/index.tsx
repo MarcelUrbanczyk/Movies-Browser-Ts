@@ -33,7 +33,6 @@ const Navigation = () => {
     const placeholderString = path.split("/")[1];
     setSearch("");
     setInputPlaceholder(`Search for ${placeholderString}...`);
-    console.log(1);
   }, [path]);
 
   const [search, setSearch] = useState("");

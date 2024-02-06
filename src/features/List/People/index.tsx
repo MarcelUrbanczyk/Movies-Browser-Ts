@@ -10,9 +10,11 @@ const PeopleList = () => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const query = useDebounce(searchParams.get("search"), 1 * 1000);
+  const page = parseInt(searchParams.get("page") || "1");
+
   const { isLoading, error, data } = useQuery({
-    queryKey: ["people", query],
-    queryFn: () => getPeople(query, 1),
+    queryKey: ["people", query, page],
+    queryFn: () => getPeople(query, page),
   });
 
   if (isLoading) return <Loading />;

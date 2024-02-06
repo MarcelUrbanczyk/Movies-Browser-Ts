@@ -6,6 +6,7 @@ const colors = {
   Mystic: "#E4E6F0",
   PattensBlue: "#D6E4FF",
   ScienceBlue: "#0044CC",
+  Silver: "#C4C4C4",
 };
 
 export const theme = {
@@ -15,6 +16,7 @@ export const theme = {
   errorButton: colors.ScienceBlue,
   textPrimary: colors.Woodsmoke,
   textSecondary: colors.Waterloo,
+  imagePlaceholder: colors.Silver,
   pagination: {
     active: colors.PattensBlue,
     arrowActive: colors.ScienceBlue,

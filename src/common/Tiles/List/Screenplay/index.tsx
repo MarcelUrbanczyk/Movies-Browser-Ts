@@ -23,6 +23,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getShowGenres, getMovieGenres } from "../../../../features/getData";
 import { filterGenres } from "../../filterGenres";
 import { useEffect, useState } from "react";
+import ImagePlaceholder from "../../imagePlaceholder";
 const ScreenplayListTile = ({
   title,
   year,
@@ -48,10 +49,14 @@ const ScreenplayListTile = ({
   return (
     <Tile>
       <Frame>
-        <Poster
-          src={`https://image.tmdb.org/t/p/original/${poster}`}
-          alt={title}
-        />
+        {poster ? (
+          <Poster
+            src={`https://image.tmdb.org/t/p/original/${poster}`}
+            alt={title}
+          />
+        ) : (
+          <ImagePlaceholder isPerson={false} />
+        )}
       </Frame>
       <Wrapper>
         <Title>{title}</Title>

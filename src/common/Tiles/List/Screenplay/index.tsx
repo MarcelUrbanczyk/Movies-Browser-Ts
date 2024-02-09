@@ -25,6 +25,7 @@ import { getShowGenres, getMovieGenres } from "../../../../features/getData";
 import { filterGenres } from "../../filterGenres";
 import { useEffect, useState } from "react";
 import ImagePlaceholder from "../../imagePlaceholder";
+import { toMovie, toShow } from "../../../../core/routes";
 const ScreenplayListTile = ({
   title,
   year,
@@ -33,6 +34,7 @@ const ScreenplayListTile = ({
   votes,
   genres,
   isMovie,
+  id,
 }: ScreenplayListTileProps) => {
   const [genreList, setGenreList] = useState<GenreProps[]>([]);
 
@@ -48,7 +50,11 @@ const ScreenplayListTile = ({
     }
   }, [data]);
   return (
-    <Link>
+    <Link
+      to={() => {
+        isMovie ? toMovie(id) : toShow(id);
+      }}
+    >
       <Tile>
         <Frame>
           {poster ? (

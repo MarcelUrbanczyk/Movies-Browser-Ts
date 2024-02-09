@@ -32,11 +32,13 @@ export type ScreenplayListTileProps = {
 export type PeopleTileProps = {
   name: string;
   image?: string;
+  id: number;
 };
 
 export type PeopleProps = {
   name: string;
   profile_path?: string;
+  id: number;
 };
 
 export type GenreProps = {

@@ -15,6 +15,7 @@ import {
   Genre,
   MobileWrapper,
   Wrapper,
+  Link,
 } from "./styled";
 import icon from "../../starIcon.png";
 import { Star } from "../../starIcon";
@@ -47,63 +48,65 @@ const ScreenplayListTile = ({
     }
   }, [data]);
   return (
-    <Tile>
-      <Frame>
-        {poster ? (
-          <Poster
-            src={`https://image.tmdb.org/t/p/original/${poster}`}
-            alt={title}
-          />
-        ) : (
-          <ImagePlaceholder isPerson={false} />
-        )}
-      </Frame>
-      <Wrapper>
-        <Title>{title}</Title>
-        {year && <Year>{getYear(year)}</Year>}
-        {genreList && (
-          <GenreList>
-            {genreList.map((genre) => (
-              <Genre key={genre.id}>{genre.name}</Genre>
-            ))}
-          </GenreList>
-        )}
-        <Rating>
-          {rating && votes ? (
-            <>
-              <Star src={icon} />
-              <Score>{rating.toFixed(2)}</Score>
-              <Votes>{votes} &nbsp;votes</Votes>
-            </>
+    <Link>
+      <Tile>
+        <Frame>
+          {poster ? (
+            <Poster
+              src={`https://image.tmdb.org/t/p/original/${poster}`}
+              alt={title}
+            />
           ) : (
-            <Votes>No votes yet</Votes>
+            <ImagePlaceholder isPerson={false} />
           )}
-        </Rating>
-      </Wrapper>
+        </Frame>
+        <Wrapper>
+          <Title>{title}</Title>
+          {year && <Year>{getYear(year)}</Year>}
+          {genreList && (
+            <GenreList>
+              {genreList.map((genre) => (
+                <Genre key={genre.id}>{genre.name}</Genre>
+              ))}
+            </GenreList>
+          )}
+          <Rating>
+            {rating && votes ? (
+              <>
+                <Star src={icon} />
+                <Score>{rating.toFixed(2)}</Score>
+                <Votes>{votes} &nbsp;votes</Votes>
+              </>
+            ) : (
+              <Votes>No votes yet</Votes>
+            )}
+          </Rating>
+        </Wrapper>
 
-      <MobileWrapper>
-        <Title>{title}</Title>
-        {year && <Year>{getYear(year)}</Year>}
-        {genreList && (
-          <GenreList>
-            {genreList.map((genre) => (
-              <Genre key={genre.id}>{genre.name}</Genre>
-            ))}
-          </GenreList>
-        )}
-        <Rating>
-          {rating && votes ? (
-            <>
-              <Star src={icon} />
-              <Score>{rating.toFixed(2)}</Score>
-              <Votes>{votes} &nbsp;votes</Votes>
-            </>
-          ) : (
-            <Votes>No votes yet</Votes>
+        <MobileWrapper>
+          <Title>{title}</Title>
+          {year && <Year>{getYear(year)}</Year>}
+          {genreList && (
+            <GenreList>
+              {genreList.map((genre) => (
+                <Genre key={genre.id}>{genre.name}</Genre>
+              ))}
+            </GenreList>
           )}
-        </Rating>
-      </MobileWrapper>
-    </Tile>
+          <Rating>
+            {rating && votes ? (
+              <>
+                <Star src={icon} />
+                <Score>{rating.toFixed(2)}</Score>
+                <Votes>{votes} &nbsp;votes</Votes>
+              </>
+            ) : (
+              <Votes>No votes yet</Votes>
+            )}
+          </Rating>
+        </MobileWrapper>
+      </Tile>
+    </Link>
   );
 };
 export default ScreenplayListTile;

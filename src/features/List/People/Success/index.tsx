@@ -16,8 +16,8 @@ const Success = ({ people, totalPeople, totalPages, query }) => {
               ? `Sorry, there are no results for "${query}"`
               : `Search results for "${query}" (${totalPeople})`}
           </Header>
-          {people.map(({ name, profile_path: image }: PeopleProps) => (
-            <PeopleListTile name={name} image={image} />
+          {people.map(({ name, profile_path: image, id }: PeopleProps) => (
+            <PeopleListTile name={name} image={image} id={id} />
           ))}
         </Wrapper>
       </Main>

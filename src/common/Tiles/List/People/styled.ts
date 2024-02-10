@@ -1,7 +1,10 @@
 import { styled } from "styled-components";
 import { NavLink } from "react-router-dom";
 
-export const Link = styled(NavLink)``;
+export const Link = styled(NavLink)`
+  all: unset;
+  cursor: pointer;
+`;
 
 export const Tile = styled.article`
   padding: 16px;
@@ -11,6 +14,7 @@ export const Tile = styled.article`
   display: flex;
   flex-direction: column;
   gap: 12px;
+  height: 100%;
   box-shadow: ${({ theme }) => theme.shadow};
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     max-width: 164px;

@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://marcelurbanczyk.github.io/Movies-Browser-Ts/",
   "dependencies": {
-    "@tanstack/react-query": "^5.17.10",
+    "@tanstack/react-query": "^5.20.1",
     "@tanstack/react-query-devtools": "^5.17.12",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

@@ -62,3 +62,11 @@ export const getShows = async (
   const response = await fetch(query ? urlSearch : urlPopular, options);
   return await response.json();
 };
+
+export const getPageData = async (dataType: string, id: number) => {
+  const url = `https://api.themoviedb.org/3/${dataType}/${id}`;
+
+  const response = await fetch(url, options);
+
+  return await response.json();
+};

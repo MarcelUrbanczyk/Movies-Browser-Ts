@@ -50,7 +50,7 @@ const ScreenplayListTile = ({
     }
   }, [data]);
   return (
-    <Link to={isMovie ? toMovie(id) : toShow(id)}>
+    <Link to={isMovie ? `/movies/${id}` : `/shows/${id}`}>
       <Tile>
         <Frame>
           {poster ? (

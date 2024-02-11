@@ -4,7 +4,7 @@ import ImagePlaceholder from "../../imagePlaceholder";
 import { toPerson } from "../../../../core/routes";
 
 const PeopleListTile = ({ name, image, id }: PeopleTileProps) => (
-  <Link to={toPerson(id)}>
+  <Link to={`/people/${id}`}>
     <Tile>
       <Frame>
         {image ? (

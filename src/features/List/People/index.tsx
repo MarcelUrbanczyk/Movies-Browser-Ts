@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import Success from "./Success";
 import Error from "../../Error";
 import Loading from "../../Loading";
-import { getPeople } from "../../getData";
+import { getListData } from "../../getData";
 import { useLocation } from "react-router";
 import { useDebounce } from "../../useDebounce";
 
@@ -14,7 +14,7 @@ const PeopleList = () => {
 
   const { isLoading, error, data } = useQuery({
     queryKey: ["people", query, page],
-    queryFn: () => getPeople(query, page),
+    queryFn: () => getListData("person", query, page),
   });
 
   if (isLoading) return <Loading />;

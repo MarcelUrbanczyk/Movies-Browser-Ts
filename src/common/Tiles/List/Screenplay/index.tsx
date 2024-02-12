@@ -21,11 +21,10 @@ import icon from "../../starIcon.png";
 import { Star } from "../../starIcon";
 import { getYear } from "../../getYear";
 import { useQuery } from "@tanstack/react-query";
-import { getShowGenres, getMovieGenres } from "../../../../features/getData";
+import { getGenres } from "../../../../features/getData";
 import { filterGenres } from "../../filterGenres";
 import { useEffect, useState } from "react";
 import ImagePlaceholder from "../../imagePlaceholder";
-import { toMovie, toShow } from "../../../../core/routes";
 const ScreenplayListTile = ({
   title,
   year,
@@ -40,7 +39,7 @@ const ScreenplayListTile = ({
 
   const { isLoading, error, data } = useQuery({
     queryKey: ["genres"],
-    queryFn: isMovie ? getMovieGenres : getShowGenres,
+    queryFn: () => (isMovie ? getGenres("movie") : getGenres("tv")),
   });
 
   useEffect(() => {

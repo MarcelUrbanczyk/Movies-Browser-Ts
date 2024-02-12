@@ -5,10 +5,9 @@ type dataType = "movie" | "tv" | "person";
 type genreType = "movie" | "tv";
 
 export const getGenres = async (genreType: genreType) => {
-  const response = await fetch(
-    `https://api.themoviedb.org/3/genre/${genreType}}/list`,
-    options
-  );
+  const url = `https://api.themoviedb.org/3/genre/${genreType}/list`;
+
+  const response = await fetch(url, options);
   const { genres } = await response.json();
 
   return genres;

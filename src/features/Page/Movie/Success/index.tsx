@@ -1,10 +1,15 @@
+import ScreenplayPageTile from "../../../../common/Tiles/Page/Screenplay";
 import Main from "../../../../common/main";
-import { Wrapper } from "./styled";
 
 const Success = ({ movie }) => {
   return (
     <Main>
-      <Wrapper></Wrapper>
+      <ScreenplayPageTile
+        title={movie.title}
+        poster={movie.poster_path}
+        date={movie.release_date}
+        production={movie.production_countries}
+      />
     </Main>
   );
 };

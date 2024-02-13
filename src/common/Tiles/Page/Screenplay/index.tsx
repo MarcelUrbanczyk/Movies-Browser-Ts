@@ -14,6 +14,12 @@ import { getYear } from "../../getYear";
 import { formatDate } from "./formatDate";
 
 const ScreenplayPageTile = ({ title, poster, date, production }) => {
+  const productionCountries = production
+    ?.map((country) => country.name)
+    .join(", ");
+  const shortProductionCountries = production
+    ?.map((country) => country.iso_3166_1)
+    .join(", ");
   return (
     <Tile>
       <Frame>
@@ -30,7 +36,7 @@ const ScreenplayPageTile = ({ title, poster, date, production }) => {
             {production && (
               <InfoListWrapper>
                 <Term>Production: &nbsp; </Term>
-                <Info>{production.name}</Info>
+                <Info>{productionCountries}</Info>
               </InfoListWrapper>
             )}
             {date && (

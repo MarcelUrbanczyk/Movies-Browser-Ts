@@ -16,15 +16,15 @@ export const Tile = styled.article`
 export const Frame = styled.span`
   border-radius: ${({ theme }) => theme.borderRadius};
   overflow: hidden;
-  width: 312px;
+  min-width: 312px;
   height: 464px;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-    width: 220px;
+    min-width: 220px;
     height: 326px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     grid-column: 1;
-    width: 114px;
+    min-width: 114px;
     height: 169px;
   }
 `;
@@ -96,4 +96,33 @@ export const Info = styled.dd`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 12px;
   }
+`;
+
+export const Description = styled.p`
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 160%;
+`;
+
+export const GenreTag = styled.div`
+  padding: 8px 16px;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  background-color: ${({ theme }) => theme.alternateBox};
+  font-size: 14px;
+`;
+
+export const Genres = styled.span`
+  display: flex;
+  gap: 10px;
+`;
+
+export const Rating = styled.span`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
+
+export const Star = styled.img`
+  width: 24px;
+  height: 24px;
 `;

@@ -9,6 +9,10 @@ const Success = ({ movie }) => {
         poster={movie.poster_path}
         date={movie.release_date}
         production={movie.production_countries}
+        description={movie.overview}
+        genres={movie.genres}
+        score={movie.vote_average}
+        votes={movie.vote_count}
       />
     </Main>
   );

@@ -9,11 +9,24 @@ import {
   InfoListWrapper,
   Term,
   Info,
+  Description,
+  Genres,
+  GenreTag,
 } from "./styled";
 import { getYear } from "../../getYear";
 import { formatDate } from "./formatDate";
+import icon from "./../../starIcon.png";
 
-const ScreenplayPageTile = ({ title, poster, date, production }) => {
+const ScreenplayPageTile = ({
+  title,
+  poster,
+  date,
+  production,
+  description,
+  genres,
+  score,
+  votes,
+}) => {
   const productionCountries = production
     ?.map((country) => country.name)
     .join(", ");
@@ -47,6 +60,15 @@ const ScreenplayPageTile = ({ title, poster, date, production }) => {
             )}
           </InfoList>
         ) : null}
+        {genres && (
+          <Genres>
+            {genres.map((genre) => (
+              <GenreTag key={genre.id}>{genre.name}</GenreTag>
+            ))}
+          </Genres>
+        )}
+
+        {description && <Description>{description}</Description>}
       </ContentWrapper>
     </Tile>
   );

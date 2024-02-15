@@ -121,8 +121,3 @@ export const Rating = styled.span`
   align-items: center;
   gap: 8px;
 `;
-
-export const Star = styled.img`
-  width: 24px;
-  height: 24px;
-`;

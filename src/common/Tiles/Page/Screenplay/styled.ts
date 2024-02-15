@@ -118,6 +118,25 @@ export const Genres = styled.span`
 
 export const Rating = styled.span`
   display: flex;
-  align-items: center;
   gap: 8px;
+`;
+
+export const Score = styled.p`
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 13px;
+  }
+`;
+
+export const Votes = styled.p`
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: auto 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 12px;
+  }
 `;

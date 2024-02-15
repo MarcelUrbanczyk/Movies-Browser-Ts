@@ -12,7 +12,11 @@ import {
   Description,
   Genres,
   GenreTag,
+  Rating,
+  Score,
+  Votes,
 } from "./styled";
+import { PageStar } from "../../starIcon";
 import { getYear } from "../../getYear";
 import { formatDate } from "./formatDate";
 import icon from "./../../starIcon.png";
@@ -67,7 +71,15 @@ const ScreenplayPageTile = ({
             ))}
           </Genres>
         )}
-
+        {score && votes ? (
+          <Rating>
+            <PageStar src={icon} />
+            <Score>{score.toFixed(2)}</Score>
+            <Votes>/10 &nbsp; {votes} votes</Votes>
+          </Rating>
+        ) : (
+          "No votes yet"
+        )}
         {description && <Description>{description}</Description>}
       </ContentWrapper>
     </Tile>

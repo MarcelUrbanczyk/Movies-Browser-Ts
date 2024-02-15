@@ -34,3 +34,12 @@ export const getPageData = async (dataType: dataType, id: number) => {
 
   return await response.json();
 };
+
+export const getCredits = async (dataType: dataType, id: number) => {
+  const url = `https://api.themoviedb.org/3/${dataType}/${id}/credits`;
+
+  const response = await fetch(url, options);
+
+  const { cast, crew } = await response.json();
+  return { cast, crew };
+};

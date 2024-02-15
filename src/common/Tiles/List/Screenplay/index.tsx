@@ -18,7 +18,7 @@ import {
   Link,
 } from "./styled";
 import icon from "../../starIcon.png";
-import { Star } from "../../starIcon";
+import { ListStar } from "../../starIcon";
 import { getYear } from "../../getYear";
 import { useQuery } from "@tanstack/react-query";
 import { getGenres } from "../../../../features/getData";
@@ -74,7 +74,7 @@ const ScreenplayListTile = ({
           <Rating>
             {rating && votes ? (
               <>
-                <Star src={icon} />
+                <ListStar src={icon} />
                 <Score>{rating.toFixed(2)}</Score>
                 <Votes>{votes} &nbsp;votes</Votes>
               </>
@@ -97,7 +97,7 @@ const ScreenplayListTile = ({
           <Rating>
             {rating && votes ? (
               <>
-                <Star src={icon} />
+                <ListStar src={icon} />
                 <Score>{rating.toFixed(2)}</Score>
                 <Votes>{votes} &nbsp;votes</Votes>
               </>

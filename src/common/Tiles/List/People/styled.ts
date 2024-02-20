@@ -55,6 +55,19 @@ export const Name = styled.p`
   }
 `;
 
+export const Role = styled.p`
+  color: ${({ theme }) => theme.textSecondary};
+  text-align: center;
+  font-size: 18px;
+  line-height: 130%;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 14px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 10px;
+  }
+`;
+
 export const Image = styled.img`
   height: auto;
   width: 100%;

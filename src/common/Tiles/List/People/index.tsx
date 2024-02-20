@@ -1,9 +1,9 @@
-import { Frame, Name, Tile, Image, Link } from "./styled";
+import { Frame, Name, Tile, Image, Link, Role } from "./styled";
 import { PeopleTileProps } from "../../../../features/types";
 import ImagePlaceholder from "../../imagePlaceholder";
 import { toPerson } from "../../../../core/routes";
 
-const PeopleListTile = ({ name, image, id }: PeopleTileProps) => (
+const PeopleListTile = ({ name, image, id, role }: PeopleTileProps) => (
   <Link to={`/people/${id}`}>
     <Tile>
       <Frame>
@@ -14,6 +14,7 @@ const PeopleListTile = ({ name, image, id }: PeopleTileProps) => (
         )}
       </Frame>
       <Name>{name}</Name>
+      {role && <Role>{role}</Role>}
     </Tile>
   </Link>
 );

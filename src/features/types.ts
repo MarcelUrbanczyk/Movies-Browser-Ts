@@ -33,12 +33,14 @@ export type PeopleTileProps = {
   name: string;
   image?: string;
   id: number;
+  role?: string;
 };
 
 export type PeopleProps = {
   name: string;
   profile_path?: string;
   id: number;
+  character?: string;
 };
 
 export type GenreProps = {

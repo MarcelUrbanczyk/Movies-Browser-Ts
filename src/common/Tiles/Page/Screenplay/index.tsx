@@ -15,6 +15,7 @@ import {
   Rating,
   Score,
   Votes,
+  MobileDescription,
 } from "./styled";
 import { PageStar } from "../../starIcon";
 import { getYear } from "../../getYear";
@@ -82,6 +83,7 @@ const ScreenplayPageTile = ({
         )}
         {description && <Description>{description}</Description>}
       </ContentWrapper>
+      {description && <MobileDescription>{description}</MobileDescription>}
     </Tile>
   );
 };

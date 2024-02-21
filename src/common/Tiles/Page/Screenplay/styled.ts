@@ -5,11 +5,15 @@ export const Tile = styled.article`
   box-shadow: ${({ theme }) => theme.shadow};
   border-radius: ${({ theme }) => theme.borderRadius};
   padding: 40px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   gap: 40px;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    padding: 24px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 16px;
+    gap: 20px;
   }
 `;
 
@@ -23,7 +27,6 @@ export const Frame = styled.span`
     height: 326px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    grid-column: 1;
     min-width: 114px;
     height: 169px;
   }
@@ -37,7 +40,7 @@ export const Poster = styled.img`
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 `;
 
 export const Title = styled.p`
@@ -45,7 +48,7 @@ export const Title = styled.p`
   font-weight: 600;
   margin: 0;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-    font-size: 32px;
+    font-size: 28px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 14px;
@@ -53,7 +56,7 @@ export const Title = styled.p`
 `;
 
 export const Year = styled.p`
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.2;
   margin: 0;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
@@ -78,9 +81,6 @@ export const Term = styled.dt`
   font-size: 18px;
   line-height: 1.2;
   white-space: nowrap;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-    font-size: 20px;
-  }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 12px;
   }
@@ -90,9 +90,6 @@ export const Info = styled.dd`
   font-size: 18px;
   line-height: 1.2;
   margin: 0;
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-    font-size: 20px;
-  }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 12px;
   }
@@ -102,6 +99,12 @@ export const Description = styled.p`
   font-size: 20px;
   font-weight: 400;
   line-height: 160%;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    font-size: 18px;
+  }
+  @media (max-width: 640px) {
+    display: none;
+  }
 `;
 
 export const GenreTag = styled.div`
@@ -109,11 +112,19 @@ export const GenreTag = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius};
   background-color: ${({ theme }) => theme.alternateBox};
   font-size: 14px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
+    padding: 6px 14px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 4px 12px;
+    font-size: 10px;
+  }
 `;
 
 export const Genres = styled.span`
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 `;
 
 export const Rating = styled.span`
@@ -136,6 +147,18 @@ export const Votes = styled.p`
   font-weight: 400;
   line-height: 1.2;
   margin: auto 0;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 12px;
+  }
+`;
+
+export const MobileDescription = styled.p`
+  display: none;
+  font-size: 18px;
+  grid-column: span 2;
+  @media (max-width: 640px) {
+    display: block;
+  }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 12px;
   }

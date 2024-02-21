@@ -33,7 +33,6 @@ export const Frame = styled.span`
 `;
 
 export const Poster = styled.img`
-  width: 100%;
   height: 100%;
 `;
 

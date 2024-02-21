@@ -16,6 +16,7 @@ export const Header = styled.h2`
 
 export const Wrapper = styled.div`
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 24px;
   margin: 24px 0;

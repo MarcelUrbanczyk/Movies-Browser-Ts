@@ -11,7 +11,7 @@ const Success = ({ people, totalPeople, totalPages, query }) => {
         <Wrapper>
           <Header>
             {!query
-              ? "Popular movies"
+              ? "Popular people"
               : totalPeople === 0 && query
               ? `Sorry, there are no results for "${query}"`
               : `Search results for "${query}" (${totalPeople})`}

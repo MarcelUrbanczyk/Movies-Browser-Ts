@@ -1,4 +1,9 @@
-import { styled } from "styled-components";
+import { styled, css } from "styled-components";
+
+type InfoProps = {
+  $country?: boolean;
+  $shortCountry?: boolean;
+};
 
 export const Tile = styled.article`
   background-color: ${({ theme }) => theme.box};
@@ -12,34 +17,30 @@ export const Tile = styled.article`
     padding: 24px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    grid-template-columns: 1fr 3fr;
     padding: 16px;
     gap: 20px;
   }
 `;
 
-export const Frame = styled.span`
-  border-radius: ${({ theme }) => theme.borderRadius};
-  overflow: hidden;
-  min-width: 312px;
+export const Poster = styled.img`
   height: 464px;
+  border-radius: ${({ theme }) => theme.borderRadius};
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
-    min-width: 220px;
     height: 326px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    min-width: 114px;
     height: 169px;
   }
-`;
-
-export const Poster = styled.img`
-  height: 100%;
 `;
 
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    gap: 6px;
+  }
 `;
 
 export const Title = styled.p`
@@ -60,6 +61,7 @@ export const Year = styled.p`
   margin: 0;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 13px;
+    color: ${({ theme }) => theme.textSecondary};
   }
 `;
 
@@ -81,17 +83,32 @@ export const Term = styled.dt`
   line-height: 1.2;
   white-space: nowrap;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: 12px;
+    display: none;
   }
 `;
 
-export const Info = styled.dd`
+export const Info = styled.dd<InfoProps>`
   font-size: 18px;
   line-height: 1.2;
   margin: 0;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 12px;
   }
+  ${({ $country }) =>
+    $country &&
+    css`
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        display: none;
+      }
+    `}
+  ${({ $shortCountry }) =>
+    $shortCountry &&
+    css`
+      display: none;
+      @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+        display: block;
+      }
+    `}
 `;
 
 export const Description = styled.p`
@@ -115,7 +132,7 @@ export const GenreTag = styled.div`
     padding: 6px 14px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    padding: 4px 12px;
+    padding: 4px 6px;
     font-size: 10px;
   }
 `;
@@ -131,13 +148,19 @@ export const Rating = styled.span`
   gap: 8px;
 `;
 
+export const Scale = styled.span`
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
+`;
+
 export const Score = styled.p`
   font-size: 22px;
   font-weight: 500;
   line-height: 1.3;
   margin: 0;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: 13px;
+    font-size: 12px;
   }
 `;
 
@@ -148,6 +171,7 @@ export const Votes = styled.p`
   margin: auto 0;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: 12px;
+    color: ${({ theme }) => theme.textSecondary};
   }
 `;
 

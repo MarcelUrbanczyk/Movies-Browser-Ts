@@ -12,4 +12,8 @@ export const ListStar = styled.img`
 export const PageStar = styled.img`
   width: 24px;
   height: 24px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 16px;
+    height: 16px;
+  }
 `;

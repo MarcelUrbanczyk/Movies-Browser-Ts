@@ -41,6 +41,7 @@ export type PeopleProps = {
   profile_path?: string;
   id: number;
   character?: string;
+  job?: string;
 };
 
 export type GenreProps = {

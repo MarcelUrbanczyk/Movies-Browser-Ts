@@ -63,9 +63,6 @@ export const Role = styled.p`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobileMax}) {
     font-size: 14px;
   }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    font-size: 10px;
-  }
 `;
 
 export const Image = styled.img`

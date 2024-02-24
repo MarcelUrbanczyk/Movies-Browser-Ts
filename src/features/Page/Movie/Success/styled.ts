@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  margin: 24px 0;
+  margin: 24px auto;
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     gap: 12px;
   }

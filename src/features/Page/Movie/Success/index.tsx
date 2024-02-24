@@ -45,6 +45,24 @@ const Success = ({ movie }) => {
           </Wrapper>
         </>
       ) : null}
+
+      {crew ? (
+        <>
+          <Header>Crew</Header>
+          <Wrapper>
+            {crew.map(
+              ({ name, profile_path: image, id, character }: PeopleProps) => (
+                <PeopleListTile
+                  name={name}
+                  image={image}
+                  id={id}
+                  role={character}
+                />
+              )
+            )}
+          </Wrapper>
+        </>
+      ) : null}
     </Main>
   );
 };

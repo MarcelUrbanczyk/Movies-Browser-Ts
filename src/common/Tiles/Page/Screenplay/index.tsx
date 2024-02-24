@@ -1,5 +1,4 @@
 import {
-  Frame,
   Poster,
   Tile,
   ContentWrapper,
@@ -15,6 +14,7 @@ import {
   Rating,
   Score,
   Votes,
+  Scale,
   MobileDescription,
 } from "./styled";
 import { PageStar } from "../../starIcon";
@@ -40,12 +40,10 @@ const ScreenplayPageTile = ({
     .join(", ");
   return (
     <Tile>
-      <Frame>
-        <Poster
-          src={`https://image.tmdb.org/t/p/original/${poster}`}
-          alt={title}
-        />
-      </Frame>
+      <Poster
+        src={`https://image.tmdb.org/t/p/original/${poster}`}
+        alt={title}
+      />
       <ContentWrapper>
         <Title>{title}</Title>
         {date && <Year>{getYear(date)}</Year>}
@@ -54,7 +52,8 @@ const ScreenplayPageTile = ({
             {production && (
               <InfoListWrapper>
                 <Term>Production: &nbsp; </Term>
-                <Info>{productionCountries}</Info>
+                <Info $country>{productionCountries}</Info>
+                <Info $shortCountry>{shortProductionCountries}</Info>
               </InfoListWrapper>
             )}
             {date && (
@@ -76,7 +75,9 @@ const ScreenplayPageTile = ({
           <Rating>
             <PageStar src={icon} />
             <Score>{score.toFixed(2)}</Score>
-            <Votes>/10 &nbsp; {votes} votes</Votes>
+            <Votes>
+              <Scale>/10</Scale> &nbsp; {votes} votes
+            </Votes>
           </Rating>
         ) : (
           "No votes yet"

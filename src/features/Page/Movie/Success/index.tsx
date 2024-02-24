@@ -7,7 +7,7 @@ import { Header, Wrapper } from "./styled";
 import PeopleListTile from "../../../../common/Tiles/List/People";
 
 const Success = ({ movie }) => {
-  const { data, isLoading, error } = useQuery({
+  const { data } = useQuery({
     queryKey: ["credits", movie.id],
     queryFn: () => getCredits("movie", movie.id),
   });
@@ -50,16 +50,9 @@ const Success = ({ movie }) => {
         <>
           <Header>Crew</Header>
           <Wrapper>
-            {crew.map(
-              ({ name, profile_path: image, id, character }: PeopleProps) => (
-                <PeopleListTile
-                  name={name}
-                  image={image}
-                  id={id}
-                  role={character}
-                />
-              )
-            )}
+            {crew.map(({ name, profile_path: image, id, job }: PeopleProps) => (
+              <PeopleListTile name={name} image={image} id={id} role={job} />
+            ))}
           </Wrapper>
         </>
       ) : null}

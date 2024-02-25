@@ -28,7 +28,7 @@ const Success = ({ movie }) => {
         votes={movie.vote_count}
       />
 
-      {cast ? (
+      {cast.length > 0 ? (
         <>
           <Header>Cast</Header>
           <Wrapper>
@@ -46,7 +46,7 @@ const Success = ({ movie }) => {
         </>
       ) : null}
 
-      {crew ? (
+      {crew.length > 0 ? (
         <>
           <Header>Crew</Header>
           <Wrapper>

@@ -5,7 +5,7 @@ export const Header = styled.h2`
   font-size: 36px;
   font-weight: 600;
   line-height: 120%;
-  margin-top: 24px;
+  margin-top: 48px;
   @media (max-width: 1446px) {
     font-size: 30px;
   }

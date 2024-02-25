@@ -19,7 +19,7 @@ import {
 } from "./styled";
 import { PageStar } from "../../starIcon";
 import { getYear } from "../../getYear";
-import { formatDate } from "./formatDate";
+import { formatDate } from "../formatDate";
 import icon from "./../../starIcon.png";
 
 const ScreenplayPageTile = ({

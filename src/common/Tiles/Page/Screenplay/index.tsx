@@ -20,7 +20,7 @@ import {
 import { PageStar } from "../../starIcon";
 import { getYear } from "../../getYear";
 import { formatDate } from "../formatDate";
-import icon from "./../../starIcon.png";
+import icon from "../../../../assets/starIcon.png";
 
 const ScreenplayPageTile = ({
   title,

@@ -6,7 +6,7 @@ import {
   Wrapper,
   ButtonLink,
 } from "./styled";
-import errorIcon from "./errorIcon.png";
+import errorIcon from "../../assets/errorIcon.png";
 import { toHome } from "../../core/routes";
 
 const Error = () => (

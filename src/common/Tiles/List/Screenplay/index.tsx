@@ -17,7 +17,7 @@ import {
   Wrapper,
   Link,
 } from "./styled";
-import icon from "../../starIcon.png";
+import icon from "../../../../assets/starIcon.png";
 import { ListStar } from "../../starIcon";
 import { getYear } from "../../getYear";
 import { useQuery } from "@tanstack/react-query";
